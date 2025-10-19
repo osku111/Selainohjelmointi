@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Champions League - Scores & Standings</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="left">
+        <div class="topbar">
+          <h1 style="margin:0;font-size:1.3rem">UEFA Champions League — Matches</h1>
+          <div class="muted">Search & filter matches</div>
+        </div>
+
+        <div class="panel controls">
+          <label>Date: <input id="datePicker" type="date" /></label>
+          <button id="loadDay">Load Day</button>
+          <label>From: <input id="dateFrom" type="date" /></label>
+          <label>To: <input id="dateTo" type="date" /></label>
+          <button id="loadRange">Load Range</button>
+          <button id="loadAll" class="ghost">Load All</button>
+        </div>
+
+        <div class="panel controls">
+          <label style="flex:1">Club (partial): <input id="club" type="text" placeholder="type letters e.g. real" style="width:100%"/></label>
+          <button id="clear">Clear</button>
+        </div>
+
+        <div id="matches" class="panel" style="min-height:200px; margin-top:12px"></div>
+      </div>
+
+      <div class="right">
+        <div class="panel standings" id="standings"></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
