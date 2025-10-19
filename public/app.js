@@ -1,4 +1,4 @@
-// Frontend script (no React required)
+// Frontend osat
 
 function renderMatches(container,matches){container.innerHTML='';if(!matches||!matches.length){container.innerHTML='<div class="muted">No matches found for the selected date(s) or filters.</div>';return}matches.sort((a,b)=>new Date(a.utcDate||a.date||0)-new Date(b.utcDate||b.date||0));for(const m of matches){const div=document.createElement('div');div.className='match';const home=m.homeTeam?m.homeTeam.name:'TBD';const away=m.awayTeam?m.awayTeam.name:'TBD';const score=m.score&&m.score.fullTime?`${m.score.fullTime.home??'-'} - ${m.score.fullTime.away??'-'}`:' - ';const time=(m.utcDate||m.date||'').replace('T',' ').slice(0,16);div.innerHTML=`<div><div style="font-weight:700">${home} <span class="muted">vs</span> ${away}</div><div class="muted">${time} • ${m.venue||''}</div></div><div style="text-align:right"><div class="score">${score}</div><div class="muted">${m.status}</div></div>`;container.appendChild(div)}}
 

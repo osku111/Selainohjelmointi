@@ -94,6 +94,7 @@ app.get('/api/key', (req, res) => {
 })
 
 // Tämä hakee vain nykyisen mestarien liigan tiedot (eli competition id 2001)
+// Pystyy toki hakea muiten kilpailijen tuloksia jos osaa niiden numerot
 const CHAMPIONS_ID = '2001'
 
 app.get('/api/champions/matches', async (req, res) => {
